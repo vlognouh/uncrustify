@@ -2447,6 +2447,15 @@ void indent_text(void)
                frm.top().indent += indent_size;
                log_indent();
             }
+
+            if (options::indent_func_param_rel())
+            {
+               chunk_t *ppc = chunk_get_prev(pc);
+
+               // add to currently
+               frm.top().indent = ppc->column + indent_size;
+               log_indent();
+            }
             frm.top().indent_tab = frm.top().indent;
          }
          else if (  options::indent_oc_inside_msg_sel()

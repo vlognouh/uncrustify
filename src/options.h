@@ -1383,6 +1383,10 @@ indent_template_param;
 extern Option<bool>
 indent_func_param_double;
 
+// Indent from function name
+extern Option<bool>
+indent_func_param_rel;
+
 // Indentation column for standalone 'const' qualifier on a function
 // prototype.
 extern BoundedOption<unsigned, 0, 69>
